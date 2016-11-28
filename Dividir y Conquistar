@@ -1,0 +1,20 @@
+Cuando nos referimos a dividir y conquistar, nos referimos al uso
+de algoritmos recursivos.
+
+divide:
+  dividir el problema en subproblemas.
+
+Conquista:
+  Los subproblemas son resueltos recursivamente.
+
+Combine:
+  La solucion de los subproblemas forman parte de la resolucion del problema principal.
+
+RECURSIVIDAD:
+-------------
+
+En este capitulo se ofrecera 3 metodos para la resolucion de los algoritmos de recurrencia.
+
+* Metodo de Subtitucion.
+* Metodo de Arbol de Recurrencia.
+* Metodo del Maestro.

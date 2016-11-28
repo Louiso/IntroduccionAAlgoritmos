@@ -1,0 +1,120 @@
+O_ notacion:
+
+  O_(g(n))={
+
+    //Me indica el conjunto de funciones que crecen a la par que g(n)
+    f(n):si existe constantes positivas c1,c2, y n0
+
+    tal que 0<=c1*g(n)<=f(n)<=c2*g(n) para todo n0<=n
+
+  }
+
+
+O notacion:
+
+  //Es un conjunto que me indica cuales funciones son menores e iguales que g(n)
+  O(g(n))={
+
+    f(n): si existe constante positiva c y n0
+
+    tal que 0<=f(n)<=c*g(n) para todo n0<=n
+
+  }
+
+W notacion:
+
+  //Es un conjunto que guarda todas las funciones mayores o iguales que g(n)
+  W(g(n))={
+
+    f(n): si existe constante positivo c y n0
+
+    tal que 0<=c*(g(n))<=f(n)
+
+  }
+
+o notacion:
+
+  //Es un conjunti que guarda todas las funciones menores estrictos que g(n)
+  o(g(n))={
+
+    f(n): para todo c>0 existe una constante n0>0
+
+    tal que 0<=f(n)<c*g(n) para todo n>=n0 ; No hay forma que f(n) sea mayor o igual que g(n)
+
+  }
+
+
+w notacion:
+
+  //Es un conjunto que guarda todas las funciones mayores estrictos que g(n)
+
+  w(g(n))={
+
+    f(n): para todo n>0 existe una constante n0
+    tal que 0<=c*g(n)<f(n) para todo n>=n0 ; Indica que no hay forma que g(n) sea mayor o igual que f(n)
+
+  }
+--------------------------------------------------------------------------------------------------------
+
+
+Comparando funciones:
+
+Transitividad:
+
+  Si f(n)=O_(g(n)) && g(n)=O_(h(n)) => f(n)=O_(h(n))
+
+  Si f(n)=O(g(n)) && g(n)=O(h(n))  => f(n)=O(h(n))
+
+  Si f(n)=W(g(n)) && g(n)=W(h(n))   => f(n)=W(h(n))
+
+  Si f(n)=o(g(n)) && g(n)=o(h(n))   => f(n)=o(h(n))
+
+  Si f(n)=w(g(n)) && g(n)=w(h(n))   => f(n)=w(h(n))
+
+Reflexiva:
+
+  f(n)=O_(f(n))
+
+  f(n)=O(f(n))
+
+  f(n)=W(f(n))
+
+Simetrica:
+
+  Si f(n)=O_(g(n))  => g(n)=O_(f(n))
+
+Transposicion simetrica:
+
+  Si f(n)=O(g(n))  <=> g(n)=W(f(n))
+
+  Si f(n)=o(g(n))  <=> g(n)=w(f(n))
+
+
+Ejercicios:
+
+   1. Demostrar que max(f(n),g(n))=O_(f(n)+g(n))
+
+  Sabemos que : max(f(n),g(n))=O(f(n)+g(n))
+
+  Ademas sabemos: max(f(n),g(n))=W(f(n)+g(n))
+
+  => max(f(n),g(n))=O_(f(n)+g(n))
+
+  2. Demuestra que :
+
+    (n+a)^b = O_(n^b)
+
+    Si tomamos limite :
+
+      lim      (n+a)^b = 1 != 0   => (n+a)^b = O_(n^b)
+        n->oo   n^b
+
+  3.  2^(n+1)=O_(2^n)
+
+  4. x/(x+1) <= ln(x+1) <= x; para todo -1 < x < 1
+
+  5. lg(n)^b = o(n^a)
+
+  6. Aproximacion de Stirling
+
+    n! = (2*PI*n)^(1/2)*(n/e)^n*(1+O_(1/n))

@@ -1,0 +1,24 @@
+//Que hace a una funcion hash que sea buena!!!
+
+//METODO DE LA DIVISION:
+
+h(k)=k mod m
+
+//METODO DE LA MULTIPLICACION:
+
+Consiste en que la funcion hash sea de la sgt forma:
+
+h(k)=floor(m*decimal(k*A))   ;donde  0<A<1
+//Se observa muy bn como los valores de h(k) se encuentran alrededor de 0,1,...m-1
+
+Programar esta parte es algo dificil, por ello se opta por:
+
+Supongamos que m=2^p      ;donde p sera las cifras significativas.
+               A=s/2^w    ;donde w sera las cifras significativas y s un numero cualquiera.
+                          ;se recomienda segun knuth que A sea igual a: (raiz(5)-1)/2 aprox 0.6180339887
+              Entonces:
+              s=A*2^w;
+
+              Luego:
+              el resultado de multiplicar k*s, dara como resultado 2 palabras, r1*2^w+r0
+              se retornara los primeros k bits de r0 empezando por izquierda
